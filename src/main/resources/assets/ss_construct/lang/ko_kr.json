@@ -1,0 +1,6 @@
+{
+  "item.ss_construct.onyx_ring" : "오닉스 반지",
+  "trinkets.tooltip.slots.single" : "%d 트링켓 슬롯에 장착할 수 있습니다.",
+  "trinkets.tooltip.attributes.all" : "장착된 경우:",
+  "trinkets.tooltip.attributes.single" : "%d 트링켓 슬롯에 장착된 경우:"
+}

@@ -1,0 +1,6 @@
+{
+  "item.ss_construct.onyx_ring" : "Onyx Ring",
+  "trinkets.tooltip.slots.single": "Equippable in the %d trinket slot",
+  "trinkets.tooltip.attributes.all": "When equipped:",
+  "trinkets.tooltip.attributes.single": "When equipped in the %d trinket slot:"
+}

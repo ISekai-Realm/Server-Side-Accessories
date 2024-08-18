@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "ss_construct",
+  "version": "${version}",
+  "name": "ServerSideConstruct",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/kb100/ServerSideConstruct"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/serversideconstruct/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "net.biryeongtrain.serversideconstruct.ServerSideConstruct"
+    ],
+    "fabric-datagen": [
+      "net.biryeongtrain.serversideconstruct.datagen.DataGenInit"
+    ]
+  },
+  "mixins": [
+    "serversideconstruct.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
