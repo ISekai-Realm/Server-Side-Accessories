@@ -1,6 +1,7 @@
 package net.biryeongtrain.serversideconstruct.component;
 
 import com.mojang.serialization.Codec;
+import eu.pb4.polymer.core.api.utils.PolymerUtils;
 import net.minecraft.component.ComponentType;
 import net.minecraft.network.codec.PacketCodecs;
 
@@ -19,4 +20,10 @@ public class JewelryComponent {
             .codec(Codec.INT)
             .packetCodec(PacketCodecs.INTEGER)
             .build();
+
+    static {
+        PolymerUtils.markAsPolymer(HEALTH_ROLL);
+        PolymerUtils.markAsPolymer(DAMAGE_ROLL);
+        PolymerUtils.markAsPolymer(ARMOR_ROLL);
+    }
 }
