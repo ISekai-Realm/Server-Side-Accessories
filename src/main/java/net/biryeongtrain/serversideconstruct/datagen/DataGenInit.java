@@ -14,12 +14,5 @@ public class DataGenInit implements DataGeneratorEntrypoint {
         var pack = fabricDataGenerator.createPack();
 
         pack.addProvider(BlockTagsProvider::new);
-        pack.addProvider(WorldGenProvider::new);
-    }
-
-    @Override
-    public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, (WorldGenProvider::bootstrapConfigured));
-        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, (WorldGenProvider::bootstrapPlaced));
     }
 }
