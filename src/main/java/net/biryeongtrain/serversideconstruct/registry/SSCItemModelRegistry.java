@@ -14,4 +14,6 @@ public class SSCItemModelRegistry {
     public static PolymerModelData COPPER_SHOVEL_MODEL = PolymerResourcePackUtils.requestModel(Items.IRON_SHOVEL, PathHelper.getItemModelId("copper_shovel"));
     public static PolymerModelData COPPER_AXE_MODEL = PolymerResourcePackUtils.requestModel(Items.IRON_AXE, PathHelper.getItemModelId("copper_axe"));
     public static PolymerModelData COPPER_SWORD_MODEL = PolymerResourcePackUtils.requestModel(Items.IRON_SWORD, PathHelper.getItemModelId("copper_sword"));
+    public static PolymerModelData NETHERITE_SPEAR_MODEL = PolymerResourcePackUtils.requestModel(Items.NETHERITE_SWORD, PathHelper.getItemModelId("netherite_spear"));
+    public static PolymerModelData DIAMOND_SPEAR_MODEL = PolymerResourcePackUtils.requestModel(Items.DIAMOND_SWORD, PathHelper.getItemModelId("diamond_spear"));
 }

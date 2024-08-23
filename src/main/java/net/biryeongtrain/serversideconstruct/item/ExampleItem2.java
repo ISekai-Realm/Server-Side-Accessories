@@ -2,6 +2,8 @@ package net.biryeongtrain.serversideconstruct.item;
 
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import net.biryeongtrain.serversideconstruct.component.JewelryComponent;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -39,6 +41,7 @@ public class ExampleItem2 extends Item implements PolymerItem {
         }
         // ... Do Something
         stack.set(JewelryComponent.ARMOR_ROLL, 1);
+
         return stack;
     }
 

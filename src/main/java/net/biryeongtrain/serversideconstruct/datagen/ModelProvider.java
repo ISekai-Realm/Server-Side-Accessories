@@ -25,5 +25,9 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.register(SSCToolRegistry.COPPER_PICKAXE,"1", Models.HANDHELD);
         itemModelGenerator.register(SSCToolRegistry.COPPER_PICKAXE,"2", Models.HANDHELD);
         itemModelGenerator.register(SSCToolRegistry.COPPER_PICKAXE,"3", Models.HANDHELD);
+
+        // Spear
+        itemModelGenerator.register(SSCToolRegistry.NETHERITE_SPEAR, Models.HANDHELD);
+        itemModelGenerator.register(SSCToolRegistry.COPPER_SHOVEL, Models.HANDHELD);
     }
 }

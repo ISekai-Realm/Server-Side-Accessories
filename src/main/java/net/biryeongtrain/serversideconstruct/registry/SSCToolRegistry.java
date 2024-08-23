@@ -1,6 +1,7 @@
 package net.biryeongtrain.serversideconstruct.registry;
 
 import net.biryeongtrain.serversideconstruct.component.ToolComponents;
+import net.biryeongtrain.serversideconstruct.item.SpearPolymerItem;
 import net.biryeongtrain.serversideconstruct.item.tools.CopperMiningTool;
 import net.biryeongtrain.serversideconstruct.item.tools.PolymerMiningToolItem;
 import net.biryeongtrain.serversideconstruct.item.tools.ToolPolymerItem;
@@ -46,6 +47,24 @@ public class SSCToolRegistry {
                     new Item.Settings()
                             .attributeModifiers(SwordItem.createAttributeModifiers(SSCMaterialTier.COPPER_MATERIAL, 3, -2.4f)),
                     SSCItemModelRegistry.COPPER_SWORD_MODEL)
+    );
+
+    public static final Item NETHERITE_SPEAR = Registry.register(
+            Registries.ITEM,
+            PathHelper.getModId("netherite_spear"),
+            (Item) new ToolPolymerItem(ToolMaterials.NETHERITE,
+                    new Item.Settings()
+                            .attributeModifiers(SpearPolymerItem.createAttributeModifiers(ToolMaterials.NETHERITE, 2, -3f)),
+                    SSCItemModelRegistry.NETHERITE_SPEAR_MODEL)
+    );
+
+    public static final Item DIAMOND_SPEAR = Registry.register(
+            Registries.ITEM,
+            PathHelper.getModId("diamond_spear"),
+            (Item) new ToolPolymerItem(ToolMaterials.DIAMOND,
+                    new Item.Settings()
+                            .attributeModifiers(SpearPolymerItem.createAttributeModifiers(ToolMaterials.DIAMOND, 2, -3f)),
+                    SSCItemModelRegistry.DIAMOND_SPEAR_MODEL)
     );
 
     public static void register() {
