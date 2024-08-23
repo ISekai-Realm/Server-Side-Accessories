@@ -4,6 +4,7 @@ import com.google.common.collect.Multimap;
 import dev.emi.trinkets.api.SlotReference;
 import eu.pb4.polymer.resourcepack.api.PolymerModelData;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
+import net.biryeongtrain.serversideconstruct.attributes.Attributes;
 import net.biryeongtrain.serversideconstruct.component.JewelryComponent;
 import net.biryeongtrain.serversideconstruct.utils.PathHelper;
 import net.biryeongtrain.serversideconstruct.utils.RandomHelper;
@@ -78,6 +79,9 @@ public class OnyxRing extends Ring {
     public Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, Identifier slotIdentifier) {
         var modifiers = super.getModifiers(stack, slot, entity, slotIdentifier);
         modifiers.put(EntityAttributes.GENERIC_MAX_HEALTH, new EntityAttributeModifier(slotIdentifier, stack.getOrDefault(JewelryComponent.HEALTH_ROLL, 0), EntityAttributeModifier.Operation.ADD_VALUE));
+        modifiers.put(EntityAttributes.PLAYER_MINING_EFFICIENCY, new EntityAttributeModifier(slotIdentifier, 10, EntityAttributeModifier.Operation.ADD_VALUE));
+//        modifiers.put(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED, new EntityAttributeModifier(slotIdentifier, 0.1, EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        modifiers.put(EntityAttributes.PLAYER_BLOCK_INTERACTION_RANGE, new EntityAttributeModifier(slotIdentifier, 1, EntityAttributeModifier.Operation.ADD_VALUE));
         return modifiers;
     }
 

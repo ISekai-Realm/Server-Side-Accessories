@@ -1,20 +1,21 @@
-package net.biryeongtrain.serversideconstruct.item;
+package net.biryeongtrain.serversideconstruct.item.tools;
 
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import eu.pb4.polymer.resourcepack.api.PolymerModelData;
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.MiningToolItem;
+import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
-public class PolymerMiningToolItem extends MiningToolItem implements PolymerItem {
+public class ToolPolymerItem extends ToolItem implements PolymerItem {
     private final PolymerModelData modelData;
-    public PolymerMiningToolItem(ToolMaterial material, TagKey<Block> effectiveBlocks, Settings settings, PolymerModelData data) {
-        super(material, effectiveBlocks, settings);
+
+    public ToolPolymerItem(ToolMaterial material, Settings settings, PolymerModelData data) {
+        super(material, settings);
         this.modelData = data;
     }
 
@@ -27,5 +28,5 @@ public class PolymerMiningToolItem extends MiningToolItem implements PolymerItem
     public int getPolymerCustomModelData(ItemStack itemStack, @Nullable ServerPlayerEntity player) {
         return modelData.value();
     }
-}
 
+}

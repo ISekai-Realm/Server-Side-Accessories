@@ -4,6 +4,7 @@
   "package": "net.biryeongtrain.serversideconstruct.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "PlayerEntityMixin"
   ],
   "client": [
   ],

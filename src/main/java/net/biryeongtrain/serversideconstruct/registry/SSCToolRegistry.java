@@ -1,7 +1,9 @@
 package net.biryeongtrain.serversideconstruct.registry;
 
-import net.biryeongtrain.serversideconstruct.item.PolymerMiningToolItem;
-import net.biryeongtrain.serversideconstruct.item.ToolPolymerItem;
+import net.biryeongtrain.serversideconstruct.component.ToolComponents;
+import net.biryeongtrain.serversideconstruct.item.tools.CopperMiningTool;
+import net.biryeongtrain.serversideconstruct.item.tools.PolymerMiningToolItem;
+import net.biryeongtrain.serversideconstruct.item.tools.ToolPolymerItem;
 import net.biryeongtrain.serversideconstruct.utils.PathHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -12,11 +14,12 @@ public class SSCToolRegistry {
     public static final Item COPPER_PICKAXE = Registry.register(
             Registries.ITEM,
             PathHelper.getModId("copper_pickaxe"),
-            (Item) new PolymerMiningToolItem(SSCMaterialTier.COPPER_MATERIAL,
+            (Item) new CopperMiningTool(SSCMaterialTier.COPPER_MATERIAL,
                     BlockTags.PICKAXE_MINEABLE,
                     new Item.Settings()
-                            .attributeModifiers(PickaxeItem.createAttributeModifiers(SSCMaterialTier.COPPER_MATERIAL, 1.5f, -2.8f)),
-                    SSCItemModelRegistry.COPPER_PICKAXE_MODEL));
+                            .component(ToolComponents.COPPER_AGE, 0L)
+                            .attributeModifiers(PickaxeItem.createAttributeModifiers(SSCMaterialTier.COPPER_MATERIAL, 1.5f, -2.8f))
+                    ));
 
     public static final Item COPPER_SHOVEL = Registry.register(
             Registries.ITEM,

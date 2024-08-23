@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ss_construct:item/copper_pickaxe3"
+  }
+}

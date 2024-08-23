@@ -1,6 +1,7 @@
 package net.biryeongtrain.serversideconstruct;
 
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
+import net.biryeongtrain.serversideconstruct.attributes.Attributes;
 import net.biryeongtrain.serversideconstruct.registry.*;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -19,5 +20,6 @@ public class ServerSideConstruct implements ModInitializer {
         SSCBlockRegistry.register();
         SSCWorldGenKeys.register();
         SSCToolRegistry.register();
+        Attributes.register();
     }
 }

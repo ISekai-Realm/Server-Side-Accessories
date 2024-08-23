@@ -14,5 +14,6 @@ public class DataGenInit implements DataGeneratorEntrypoint {
         var pack = fabricDataGenerator.createPack();
 
         pack.addProvider(BlockTagsProvider::new);
+        pack.addProvider(ModelProvider::new);
     }
 }
