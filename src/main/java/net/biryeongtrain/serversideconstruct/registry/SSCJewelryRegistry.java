@@ -18,10 +18,15 @@ public class SSCJewelryRegistry {
 
     public static Item ONYX_RING = Registry.register(Registries.ITEM, PathHelper.getModId("onyx_ring"), new OnyxRing(new Item.Settings()
                     .maxCount(1)
-                    .maxDamage(300)
+                    .maxDamage(155788848)
                     .rarity(Rarity.RARE)
             )
     );
+
+    public static Item OPAL_RING;
+    public static Item RUBY_RING;
+    public static Item SAPPHIRE_RING;
+    public static Item TOPAZ_RING;
 
     public static void register() {
         // this do nothing, but it's required to be called in the main mod class

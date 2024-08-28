@@ -8,6 +8,8 @@ import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
+import java.util.List;
+
 public class JewelryComponent {
     public static final ComponentType<Integer> HEALTH_ROLL = register("jewelry_health_roll", ComponentType.<Integer>builder()
             .codec(Codec.INT)
@@ -27,9 +29,16 @@ public class JewelryComponent {
             .build()
     );
 
+    public static final ComponentType<List<RuneComponent>> RUNE_COMPONENT = register("jewelry_rune_component", ComponentType.<List<RuneComponent>>builder()
+            .codec(RuneComponent.CODEC.listOf())
+            .build()
+    );
+
     public static <T> ComponentType<T> register(String path, ComponentType<T> item) {
         Registry.register(Registries.DATA_COMPONENT_TYPE, PathHelper.getModId(path), item);
         PolymerUtils.markAsPolymer(item);
         return item;
     }
+
+
 }

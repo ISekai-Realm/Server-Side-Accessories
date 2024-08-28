@@ -2,5 +2,14 @@
   "item.ss_construct.onyx_ring" : "오닉스 반지",
   "trinkets.tooltip.slots.single" : "%d 트링켓 슬롯에 장착할 수 있습니다.",
   "trinkets.tooltip.attributes.all" : "장착된 경우:",
-  "trinkets.tooltip.attributes.single" : "%d 트링켓 슬롯에 장착된 경우:"
+  "trinkets.tooltip.attributes.single" : "%d 트링켓 슬롯에 장착된 경우:",
+  "item.ring.rune.tooltip.empty": "%d 빈 %d 룬 슬롯",
+  "item.ring.rune.tooltip.filled": "%d 삽입된 %d 룬 슬롯",
+  "rune.ss_construct.explore.name": "탐험",
+  "rune.ss_construct.mining.name": "채광",
+  "rune.ss_construct.water_explore.name": "수중 탐험",
+  "rune.ss_construct.combat.name": "전투",
+  "rune.ss_construct.everything.name": "가능성",
+  "rune.ss_construct.experience.name": "경험",
+  "rune.ss_construct.nothing.name": "에러"
 }

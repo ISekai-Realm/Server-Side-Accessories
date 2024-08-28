@@ -2,5 +2,14 @@
   "item.ss_construct.onyx_ring" : "Onyx Ring",
   "trinkets.tooltip.slots.single": "Equippable in the %d trinket slot",
   "trinkets.tooltip.attributes.all": "When equipped:",
-  "trinkets.tooltip.attributes.single": "When equipped in the %d trinket slot:"
+  "trinkets.tooltip.attributes.single": "When equipped in the %d trinket slot:",
+  "item.ring.rune.tooltip.empty": "%d Empty %d Rune Slot",
+  "item.ring.rune.tooltip.filled": "%d Filled %d Rune Slot",
+  "rune.ss_construct.explore.name": "Exploration",
+  "rune.ss_construct.mining.name" : "Mining",
+  "rune.ss_construct.water_explore.name" : "Water Exploration",
+  "rune.ss_construct.combat.name" : "Combat",
+  "rune.ss_construct.everything.name" : "Possibility",
+  "rune.ss_construct.experience.name" : "Experience",
+  "rune.ss_construct.nothing.name" : "ERROR"
 }

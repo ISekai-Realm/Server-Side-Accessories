@@ -28,6 +28,9 @@ public class ModelProvider extends FabricModelProvider {
 
         // Spear
         itemModelGenerator.register(SSCToolRegistry.NETHERITE_SPEAR, Models.HANDHELD);
-        itemModelGenerator.register(SSCToolRegistry.COPPER_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(SSCToolRegistry.DIAMOND_SPEAR, Models.HANDHELD);
+
+        // Greatsword
+        itemModelGenerator.register(SSCToolRegistry.NETHERITE_GREATSWORD, Models.HANDHELD);
     }
 }
