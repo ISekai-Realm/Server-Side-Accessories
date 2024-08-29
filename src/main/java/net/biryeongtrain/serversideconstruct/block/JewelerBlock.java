@@ -4,14 +4,23 @@ import eu.pb4.factorytools.api.block.BarrierBasedWaterloggable;
 import eu.pb4.factorytools.api.block.FactoryBlock;
 import eu.pb4.factorytools.api.block.MultiBlock;
 import eu.pb4.factorytools.api.util.VirtualDestroyStage;
+import eu.pb4.factorytools.api.virtualentity.BlockModel;
+import eu.pb4.factorytools.api.virtualentity.ItemDisplayElementUtil;
+import eu.pb4.polymer.resourcepack.api.PolymerModelData;
+import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import eu.pb4.polymer.virtualentity.api.BlockWithElementHolder;
 import eu.pb4.polymer.virtualentity.api.ElementHolder;
+import eu.pb4.polymer.virtualentity.api.attachment.BlockBoundAttachment;
+import eu.pb4.polymer.virtualentity.api.attachment.HolderAttachment;
+import eu.pb4.polymer.virtualentity.api.elements.ItemDisplayElement;
+import net.biryeongtrain.serversideconstruct.utils.PathHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -23,14 +32,18 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3f;
+
+import static net.minecraft.util.math.Direction.AxisDirection.POSITIVE;
 
 public class JewelerBlock extends MultiBlock implements FactoryBlock, BlockEntityProvider, BlockWithElementHolder, VirtualDestroyStage.Marker, BarrierBasedWaterloggable {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-
 
     public JewelerBlock(Settings settings) {
         super(2, 1, 2, settings);
@@ -86,8 +99,9 @@ public class JewelerBlock extends MultiBlock implements FactoryBlock, BlockEntit
 
     @Override
     public @Nullable ElementHolder createElementHolder(ServerWorld world, BlockPos pos, BlockState initialBlockState) {
-        return isCenter(initialBlockState) ? new Model() : null;
+        return isCenter(initialBlockState) ? new Model(initialBlockState) : null;
     }
+
 
     @Nullable
     @Override
@@ -107,9 +121,48 @@ public class JewelerBlock extends MultiBlock implements FactoryBlock, BlockEntit
 
 
 
-    public final class Model extends ElementHolder {
-        public Model() {
-            super();
+    public final class Model extends BlockModel {
+        private static final PolymerModelData MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("jeweler"));
+
+        private final ItemDisplayElement display;
+
+        public Model(BlockState state) {
+            this.display = ItemDisplayElementUtil.createSimple(MODEL.asStack());
+
+            var facing = state.get(FACING);
+//            var offset = new Vec3d(
+//                    facing.getAxis() == Direction.Axis.Z ? 0 : 0.5f,
+//                    0,
+//                    facing.getAxis() == Direction.Axis.X ? 0 : 0.5f
+//            );
+
+            this.display.setScale(new Vector3f(1.05f));
+            this.display.setDisplayWidth(3);
+
+//            this.display.setOffset(offset);
+            this.updateStatePos(state);
+            this.addElement(display);
+        }
+
+        private void updateStatePos(BlockState state) {
+            var direction = state.get(FACING);
+            var rot = direction.asRotation();
+            if (direction == Direction.NORTH) {
+                this.display.setOffset(new Vec3d(1, 0, 0));
+            }
+            if (direction == Direction.EAST) {
+                this.display.setOffset(new Vec3d(0, 0, 1));
+            }
+//            this.display.setYaw(state.get(FACING).asRotation() + MathHelper.lerp(direction.getHorizontal() / 4f,-180, 180));
+            this.display.setYaw(rot);
+
+        }
+
+        @Override
+        public void notifyUpdate(HolderAttachment.UpdateType updateType) {
+            if (updateType == BlockBoundAttachment.BLOCK_STATE_UPDATE) {
+                updateStatePos(this.blockState());
+            }
         }
     }
 }

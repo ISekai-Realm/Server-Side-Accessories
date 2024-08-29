@@ -25,7 +25,9 @@ public class SSCBlockRegistry {
     public static final JewelerBlock JEWELER_BLOCK = Registry.register(Registries.BLOCK, PathHelper.getModId("jeweler_block"), new JewelerBlock(AbstractBlock.Settings.create()
             .hardness(3.0F)
             .resistance(3.0F)
-            .requiresTool()));
+            .requiresTool()
+            .nonOpaque()
+    ));
 
     public static void register() {
         // this do nothing, but it's required to be called in the main mod class
