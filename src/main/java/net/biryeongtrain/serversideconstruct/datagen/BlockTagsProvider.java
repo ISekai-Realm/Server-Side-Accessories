@@ -1,6 +1,6 @@
 package net.biryeongtrain.serversideconstruct.datagen;
 
-import net.biryeongtrain.serversideconstruct.registry.SSCBlockRegistry;
+import net.biryeongtrain.serversideconstruct.registry.block.SSCBlockRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;

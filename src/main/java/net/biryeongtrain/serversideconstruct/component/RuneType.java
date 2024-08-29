@@ -1,35 +1,34 @@
 package net.biryeongtrain.serversideconstruct.component;
 
 import com.mojang.serialization.Codec;
+import net.biryeongtrain.serversideconstruct.registry.item.SSCItemTags;
 import net.biryeongtrain.serversideconstruct.utils.RandomHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.TextColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.StringIdentifiable;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.List;
 
 import static net.biryeongtrain.serversideconstruct.ServerSideConstruct.LOGGER;
-import static net.biryeongtrain.serversideconstruct.registry.SSCJewelryRegistry.*;
 
 public enum RuneType implements StringIdentifiable {
-    EXPLORE("explore", ONYX_RING, "#757575"),
-    MINING("mining", OPAL_RING, "#91dded"),
-    COMBAT("combat", RUBY_RING, "#d80606 "),
-    WATER_EXPLORE("water_explore", SAPPHIRE_RING, "#1298ff"),
-    EXPERIENCE("experience", TOPAZ_RING, "#edbd39"),
-    EVERYTHING("everything", Items.AIR, 10, "#ffffff"),
-    NOTHING("nothing", Items.AIR, 0, "#757575")
+    EXPLORE("explore", SSCItemTags.EXPLORATION_RUNE_FAMILY, "#757575"),
+    MINING("mining", SSCItemTags.MINING_RUNE_FAMILY, "#91dded"),
+    COMBAT("combat", SSCItemTags.COMBAT_RUNE_FAMILY, "#d80606 "),
+    WATER_EXPLORE("water_explore", SSCItemTags.WATER_EXPLORATION_RUNE_FAMILY, "#1298ff"),
+    EXPERIENCE("experience", SSCItemTags.EXPERIENCE_RUNE_FAMILY, "#edbd39"),
+    EVERYTHING("everything", SSCItemTags.EVERYTHING_RUNE_FAMILY, 10, "#ffffff"),
+    NOTHING("nothing", SSCItemTags.NOTHING_RUNE_FAMILY, 0, "#757575")
     ;
 
-    RuneType(String name, Item onColorItem, String hexColor) {
+    RuneType(String name, TagKey<Item> onColorItem, String hexColor) {
         this(name, onColorItem, 100, hexColor);
     }
 
 
-    RuneType(String name, Item onColorItem, int defaultWeight, String hexColor) {
+    RuneType(String name, TagKey<Item> onColorItem, int defaultWeight, String hexColor) {
         this.name = name;
         this.onColorItem = onColorItem;
         this.defaultWeight = defaultWeight;
@@ -47,7 +46,7 @@ public enum RuneType implements StringIdentifiable {
     }
 
     private final String name;
-    public final Item onColorItem;
+    public final TagKey<Item> onColorItem;
     public final int defaultWeight;
     public final TextColor rgbColor;
 
@@ -61,7 +60,7 @@ public enum RuneType implements StringIdentifiable {
 
     public static RuneType getOnColorType(Item item) {
         for (RuneType value : values()) {
-            if(value.onColorItem == item) {
+            if(item.getRegistryEntry().isIn(value.onColorItem)) {
                 return value;
             }
         }

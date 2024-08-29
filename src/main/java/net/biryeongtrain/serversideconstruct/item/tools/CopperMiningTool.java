@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static net.biryeongtrain.serversideconstruct.registry.SSCItemModelRegistry.*;
+import static net.biryeongtrain.serversideconstruct.registry.item.SSCItemModelRegistry.*;
 
 public class CopperMiningTool extends MiningToolItem implements PolymerItem {
     public static long DAMAGE_START_TICK = 24000L;

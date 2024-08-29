@@ -1,7 +1,9 @@
 package net.biryeongtrain.serversideconstruct.datagen;
 
-import net.biryeongtrain.serversideconstruct.registry.SSCResourceItemRegistry;
-import net.biryeongtrain.serversideconstruct.registry.SSCToolRegistry;
+import net.biryeongtrain.serversideconstruct.registry.block.SSCBlockRegistry;
+import net.biryeongtrain.serversideconstruct.registry.item.SSCJewelryRegistry;
+import net.biryeongtrain.serversideconstruct.registry.item.SSCResourceItemRegistry;
+import net.biryeongtrain.serversideconstruct.registry.item.SSCToolRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -16,6 +18,8 @@ public class ModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.ONYX_ORE);
+//        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_ONYX_ORE);
     }
 
     @Override
@@ -32,5 +36,15 @@ public class ModelProvider extends FabricModelProvider {
 
         // Greatsword
         itemModelGenerator.register(SSCToolRegistry.NETHERITE_GREATSWORD, Models.HANDHELD);
+
+        // rings
+        itemModelGenerator.register(SSCJewelryRegistry.ONYX_RING, Models.HANDHELD);
+        itemModelGenerator.register(SSCJewelryRegistry.OPAL_RING, Models.HANDHELD);
+        itemModelGenerator.register(SSCJewelryRegistry.RUBY_RING, Models.HANDHELD);
+        itemModelGenerator.register(SSCJewelryRegistry.SAPPHIRE_RING, Models.HANDHELD);
+        itemModelGenerator.register(SSCJewelryRegistry.TOPAZ_RING, Models.HANDHELD);
+        itemModelGenerator.register(SSCResourceItemRegistry.IRON_RING_ITEM, Models.HANDHELD);
     }
+
+
 }

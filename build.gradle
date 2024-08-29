@@ -41,6 +41,7 @@ dependencies {
     modImplementation include("eu.pb4:sidebar-api:${project.sidebar_api_version}")
     modImplementation include("eu.pb4:sgui:${project.sgui_version}")
     modImplementation include("eu.pb4:factorytools:${project.factory_tools_version}")
+    modImplementation include("eu.pb4:map-canvas-api:${project.map_canvas_version}")
 }
 
 processResources {
