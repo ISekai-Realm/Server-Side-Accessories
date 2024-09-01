@@ -16,4 +16,10 @@ public class PathHelper {
     public static Identifier getBlockModelId(String path) {
         return getModId("block/" + path);
     }
+    public static String getItemGroupTranslationKey(String path) {
+        return "itemgroup." + MOD_ID + "." + path;
+    }
+    public static String getBlockTranslationKey(String path) {
+        return "block." + MOD_ID + "." + path;
+    }
 }

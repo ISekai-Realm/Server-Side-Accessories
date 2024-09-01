@@ -1,8 +1,8 @@
-// 1.21.1	2024-08-29T23:10:19.9628499	ServerSideConstruct/Tags for minecraft:item
+// 1.21.1	2024-09-01T01:01:01.7370073	ServerSideConstruct/Tags for minecraft:item
 14e6e51eab0a35ea4c9a0ec1a107a7ab7ba99b64 data\ss_construct\tags\item\mining_family.json
-a8e9b490d9be88412172bfeb6c1499d146373848 data\ss_construct\tags\item\exploration_family.json
 5b2f23fe91feeda4e05f17d026cfbad14d21e9df data\ss_construct\tags\item\rings.json
-9df838ac71609a878157028f419bcb028e6c22e3 data\ss_construct\tags\item\gem_items.json
+a8e9b490d9be88412172bfeb6c1499d146373848 data\ss_construct\tags\item\exploration_family.json
+f62833e326f911d23a173ac51ff3fba2d4b18986 data\ss_construct\tags\item\gem_items.json
 f19e16d1f7771538f8dd120efe6117c8a536dddb data\ss_construct\tags\item\experience_family.json
 25647e8bbf32773fafb94832a54a323cebb8cb5d data\ss_construct\tags\item\jewelry.json
 84ee3e925fd8b585a11973321176c81fea1fc391 data\ss_construct\tags\item\water_exploration_family.json

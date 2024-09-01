@@ -19,6 +19,10 @@ public class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         this.getOrCreateTagBuilder(SSCItemTags.GEM_ITEMS)
                 .add(SSCResourceItemRegistry.ONYX_GEM)
+                .add(SSCResourceItemRegistry.OPAL_GEM)
+                .add(SSCResourceItemRegistry.RUBY_GEM)
+                .add(SSCResourceItemRegistry.SAPPHIRE_GEM)
+                .add(SSCResourceItemRegistry.TOPAZ_GEM)
         ;
 
         this.getOrCreateTagBuilder(SSCItemTags.RING_ITEMS)

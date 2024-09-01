@@ -11,5 +11,18 @@
   "rune.ss_construct.combat.name": "전투",
   "rune.ss_construct.everything.name": "가능성",
   "rune.ss_construct.experience.name": "경험",
-  "rune.ss_construct.nothing.name": "에러"
+  "rune.ss_construct.nothing.name": "에러",
+  "block.ss_construct.jeweler_block": "Jeweler Station",
+  "block.ss_construct.onyx_ore": "오닉스 광석",
+  "item.ss_construct.onyx_gem": "오닉스",
+  "item.ss_construct.opal_gem": "오팔",
+  "item.ss_construct.opal_ring": "오팔 반지",
+  "item.ss_construct.ruby_gem": "루비",
+  "item.ss_construct.ruby_ring": "루비 반지",
+  "item.ss_construct.sapphire_gem": "사파이어",
+  "item.ss_construct.sapphire_ring": "사파이어 반지",
+  "item.ss_construct.topaz_gem": "토파즈",
+  "item.ss_construct.topaz_ring": "토파즈 반지",
+  "itemgroup.ss_construct.jewelries": "Server-Side Construct 장신구",
+  "itemgroup.ss_construct.resources": "Server-Side Construct 재료"
 }

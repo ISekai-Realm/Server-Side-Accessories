@@ -16,6 +16,11 @@ public class BlockTagsProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(SSCBlockRegistry.ONYX_ORE);
+                .add(SSCBlockRegistry.ONYX_ORE)
+        ;
+
+        this.getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(SSCBlockRegistry.JEWELER_BLOCK)
+        ;
     }
 }

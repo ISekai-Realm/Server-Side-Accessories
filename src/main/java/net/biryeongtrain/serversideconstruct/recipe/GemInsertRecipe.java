@@ -25,7 +25,10 @@ public record GemInsertRecipe(Ingredient base, Ingredient addition, ItemStack re
 
     @Override
     public ItemStack craft(JewelerInput input, RegistryWrapper.WrapperLookup lookup) {
-        return this.result().copy();
+        var stack =  this.result().copy();
+        stack.getItem().onCraft(stack, input.world());
+
+        return stack;
     }
 
     @Override

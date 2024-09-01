@@ -10,9 +10,9 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.intprovider.IntProvider;
 
 public class PolymerDeepslateOreBlock extends PolymerSimpleEXPDropBlock {
-    public PolymerDeepslateOreBlock(IntProvider experienceDropped, String path, Settings settings) {
+    public PolymerDeepslateOreBlock(IntProvider experienceDropped, BlockState polymerBlockState, Settings settings) {
         super(experienceDropped,
-                PolymerBlockResourceUtils.requestBlock(BlockModelType.FULL_BLOCK, PolymerBlockModel.of(PathHelper.getBlockModelId(path)))
+                polymerBlockState
                 , settings);
     }
 

@@ -17,5 +17,6 @@ public class DataGenInit implements DataGeneratorEntrypoint {
         pack.addProvider(RecipeProvider::new);
         pack.addProvider(LootTableProvider::new);
         pack.addProvider((a, b) -> new AssetProvider(a));
+        pack.addProvider(EnglishLanguageProvider::new);
     }
 }

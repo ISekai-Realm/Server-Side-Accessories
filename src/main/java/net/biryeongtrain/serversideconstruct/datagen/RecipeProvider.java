@@ -15,7 +15,7 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static net.biryeongtrain.serversideconstruct.registry.item.SSCResourceItemRegistry.ONYX_GEM;
+import static net.biryeongtrain.serversideconstruct.registry.item.SSCResourceItemRegistry.*;
 
 public class RecipeProvider extends FabricRecipeProvider {
     public RecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
@@ -24,7 +24,7 @@ public class RecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        var gems = List.of(ONYX_GEM);
+        var gems = List.of(ONYX_GEM, OPAL_GEM, TOPAZ_GEM, SAPPHIRE_GEM, RUBY_GEM);
         for (var item : gems) {
             String path = item.getRegistryEntry().getKey().get().getValue().getPath();
             var result = Registries.ITEM.get(PathHelper.getModId(path.replace("gem", "ring")));

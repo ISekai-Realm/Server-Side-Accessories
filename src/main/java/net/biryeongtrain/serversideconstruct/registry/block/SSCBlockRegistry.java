@@ -17,7 +17,47 @@ public class SSCBlockRegistry {
             .resistance(3.0F)
             .requiresTool()));
 
-    public static final Block DEEPSLATE_ONYX_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("deepslate_onyx_ore"), new PolymerDeepslateOreBlock(UniformIntProvider.create(5, 10), "deepslate_onyx_ore", AbstractBlock.Settings.create()
+    public static final Block DEEPSLATE_ONYX_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("deepslate_onyx_ore"), new PolymerDeepslateOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.DEEPSLATE_ONYX_ORE, AbstractBlock.Settings.create()
+            .hardness(4.5F)
+            .resistance(4.5F)
+            .requiresTool()));
+
+    public static final Block OPAL_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("opal_ore"), new PolymerOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.OPAL_ORE, AbstractBlock.Settings.create()
+            .hardness(3.0F)
+            .resistance(3.0F)
+            .requiresTool()));
+
+    public static final Block DEEPSLATE_OPAL_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("deepslate_opal_ore"), new PolymerDeepslateOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.DEEPSLATE_OPAL_ORE, AbstractBlock.Settings.create()
+            .hardness(4.5F)
+            .resistance(4.5F)
+            .requiresTool()));
+
+    public static final Block RUBY_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("ruby_ore"), new PolymerOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.RUBY_ORE, AbstractBlock.Settings.create()
+            .hardness(3.0F)
+            .resistance(3.0F)
+            .requiresTool()));
+
+    public static final Block DEEPSLATE_RUBY_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("deepslate_ruby_ore"), new PolymerDeepslateOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.DEEPSLATE_RUBY_ORE, AbstractBlock.Settings.create()
+            .hardness(4.5F)
+            .resistance(4.5F)
+            .requiresTool()));
+
+    public static final Block SAPPHIRE_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("sapphire_ore"), new PolymerOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.SAPPHIRE_ORE, AbstractBlock.Settings.create()
+            .hardness(3.0F)
+            .resistance(3.0F)
+            .requiresTool()));
+
+    public static final Block DEEPSLATE_SAPPHIRE_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("deepslate_sapphire_ore"), new PolymerDeepslateOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.DEEPSLATE_SAPPHIRE_ORE, AbstractBlock.Settings.create()
+            .hardness(4.5F)
+            .resistance(4.5F)
+            .requiresTool()));
+
+    public static final Block TOPAZ_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("topaz_ore"), new PolymerOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.TOPAZ_ORE, AbstractBlock.Settings.create()
+            .hardness(3.0F)
+            .resistance(3.0F)
+            .requiresTool()));
+
+    public static final Block DEEPSLATE_TOPAZ_ORE = Registry.register(Registries.BLOCK, PathHelper.getModId("deepslate_topaz_ore"), new PolymerDeepslateOreBlock(UniformIntProvider.create(5, 10), SSCBlockModelRegistry.DEEPSLATE_TOPAZ_ORE, AbstractBlock.Settings.create()
             .hardness(4.5F)
             .resistance(4.5F)
             .requiresTool()));

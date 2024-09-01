@@ -25,6 +25,7 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.FurnaceOutputSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
@@ -97,7 +98,7 @@ public class JewelerBlockEntity extends BlockEntity {
 
         public Gui(ServerPlayerEntity player) {
             super(ScreenHandlerType.GENERIC_9X3, player, false);
-            this.setTitle(GuiTextures.JEWELER.apply(JewelerBlockEntity.this.getCachedState().getBlock().getName()));
+            this.setTitle(GuiTextures.JEWELER.apply(Text.empty()));
             this.setSlotRedirect(9 + 1, BASE_SLOT);
             this.setSlotRedirect(9 + 4, GEM_SLOT);
             this.setSlotRedirect(9 + 7, RESULT_SLOT);

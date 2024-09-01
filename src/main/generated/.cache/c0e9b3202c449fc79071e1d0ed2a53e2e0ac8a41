@@ -1,2 +1,6 @@
-// 1.21.1	2024-08-29T23:10:19.9776603	ServerSideConstruct/Recipes
+// 1.21.1	2024-09-01T01:01:01.7546154	ServerSideConstruct/Recipes
+27e5ad07455b103bdadca6cc5b3c62dcbf441dfe data\ss_construct\recipe\jeweler\insert_opal_gem.json
 ef52eef421c2e47bf0de92c12bfee95d90e36117 data\ss_construct\recipe\jeweler\insert_onyx_gem.json
+8828a6890d195d5bc599cb15219f4ee0a6da4b31 data\ss_construct\recipe\jeweler\insert_topaz_gem.json
+416bbd3e34fb97dbbe9a8aab87bf2c75748a4884 data\ss_construct\recipe\jeweler\insert_sapphire_gem.json
+9aea0d4482fea00e222e96fc5c5143867ea2cbaf data\ss_construct\recipe\jeweler\insert_ruby_gem.json

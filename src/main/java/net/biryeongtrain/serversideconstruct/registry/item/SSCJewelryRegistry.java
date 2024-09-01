@@ -1,11 +1,16 @@
 package net.biryeongtrain.serversideconstruct.registry.item;
 
+import eu.pb4.polymer.core.api.item.PolymerItemGroupUtils;
 import net.biryeongtrain.serversideconstruct.item.ring.*;
 import net.biryeongtrain.serversideconstruct.utils.PathHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Rarity;
+
+import static net.biryeongtrain.serversideconstruct.ServerSideConstruct.MOD_ID;
 
 public class SSCJewelryRegistry {
     public static Item TEST_RING = Registry.register(Registries.ITEM, PathHelper.getModId("test"), new TestTrinket(new Item.Settings()
@@ -44,7 +49,18 @@ public class SSCJewelryRegistry {
     ));
 
     public static void register() {
-        // this do nothing, but it's required to be called in the main mod class
+        PolymerItemGroupUtils.registerPolymerItemGroup(PathHelper.getModId("jewelry_group"), ItemGroup.create(ItemGroup.Row.BOTTOM, -1)
+                .icon(OPAL_RING::getDefaultStack)
+                        .displayName(Text.translatable(PathHelper.getItemGroupTranslationKey("jewelries")))
+                .entries((context, entries) -> {
+                    entries.add(ONYX_RING);
+                    entries.add(OPAL_RING);
+                    entries.add(RUBY_RING);
+                    entries.add(SAPPHIRE_RING);
+                    entries.add(TOPAZ_RING);
+                    entries.add(TEST_RING);
+                }).build()
+        );
     }
 
     public static Item register(String id, Item item) {

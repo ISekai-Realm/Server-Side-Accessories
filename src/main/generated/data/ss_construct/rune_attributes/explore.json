@@ -1,0 +1,22 @@
+[
+  {
+    "range": {
+      "min_inclusive": 1.0,
+      "max_exclusive": 2.0
+    },
+    "weight": 100,
+    "gen_tier": 3,
+    "attribute": "minecraft:generic.attack_damage",
+    "operation": "add_value"
+  },
+  {
+    "range": {
+      "min_inclusive": 1.0,
+      "max_exclusive": 5.0
+    },
+    "weight": 100,
+    "gen_tier": 2,
+    "attribute": "minecraft:generic.attack_damage",
+    "operation": "add_value"
+  }
+]

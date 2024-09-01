@@ -1,0 +1,13 @@
+{
+  "type": "ss_construct:jeweler/gem_insert",
+  "addition": {
+    "item": "ss_construct:opal_gem"
+  },
+  "base": {
+    "item": "ss_construct:iron_ring"
+  },
+  "result": {
+    "count": 1,
+    "id": "ss_construct:opal_ring"
+  }
+}

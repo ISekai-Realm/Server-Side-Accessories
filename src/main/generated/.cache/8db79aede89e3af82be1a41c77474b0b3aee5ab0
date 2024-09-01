@@ -1,2 +1,3 @@
-// 1.21.1	2024-08-29T23:10:19.9746053	ServerSideConstruct/Tags for minecraft:block
+// 1.21.1	2024-09-01T01:01:01.7520398	ServerSideConstruct/Tags for minecraft:block
 8a50bbf29c4ec83af7ebbe643d04d73a49f451bf data\minecraft\tags\block\mineable\pickaxe.json
+45de955c9412ee36204a6195030ff7828f757131 data\minecraft\tags\block\mineable\axe.json

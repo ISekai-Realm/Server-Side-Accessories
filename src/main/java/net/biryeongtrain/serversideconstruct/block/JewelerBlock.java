@@ -13,6 +13,7 @@ import eu.pb4.polymer.virtualentity.api.ElementHolder;
 import eu.pb4.polymer.virtualentity.api.attachment.BlockBoundAttachment;
 import eu.pb4.polymer.virtualentity.api.attachment.HolderAttachment;
 import eu.pb4.polymer.virtualentity.api.elements.ItemDisplayElement;
+import net.biryeongtrain.serversideconstruct.registry.block.SSCBlockModelRegistry;
 import net.biryeongtrain.serversideconstruct.utils.PathHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -120,26 +121,18 @@ public class JewelerBlock extends MultiBlock implements FactoryBlock, BlockEntit
     }
 
 
-
     public final class Model extends BlockModel {
-        private static final PolymerModelData MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("jeweler"));
 
         private final ItemDisplayElement display;
 
         public Model(BlockState state) {
-            this.display = ItemDisplayElementUtil.createSimple(MODEL.asStack());
+            this.display = ItemDisplayElementUtil.createSimple(SSCBlockModelRegistry.JEWELER_MODEL.asStack());
 
             var facing = state.get(FACING);
-//            var offset = new Vec3d(
-//                    facing.getAxis() == Direction.Axis.Z ? 0 : 0.5f,
-//                    0,
-//                    facing.getAxis() == Direction.Axis.X ? 0 : 0.5f
-//            );
 
             this.display.setScale(new Vector3f(1.05f));
             this.display.setDisplayWidth(3);
 
-//            this.display.setOffset(offset);
             this.updateStatePos(state);
             this.addElement(display);
         }
@@ -153,7 +146,6 @@ public class JewelerBlock extends MultiBlock implements FactoryBlock, BlockEntit
             if (direction == Direction.EAST) {
                 this.display.setOffset(new Vec3d(0, 0, 1));
             }
-//            this.display.setYaw(state.get(FACING).asRotation() + MathHelper.lerp(direction.getHorizontal() / 4f,-180, 180));
             this.display.setYaw(rot);
 
         }

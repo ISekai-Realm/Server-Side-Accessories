@@ -1,5 +1,9 @@
 {
   "values": [
-    "ss_construct:onyx_gem"
+    "ss_construct:onyx_gem",
+    "ss_construct:opal_gem",
+    "ss_construct:ruby_gem",
+    "ss_construct:sapphire_gem",
+    "ss_construct:topaz_gem"
   ]
 }

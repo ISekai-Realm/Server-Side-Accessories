@@ -17,14 +17,28 @@ public class ModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
         blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.ONYX_ORE);
-//        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_ONYX_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_ONYX_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.OPAL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_OPAL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.RUBY_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_RUBY_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.TOPAZ_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(SSCBlockRegistry.DEEPSLATE_TOPAZ_ORE);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(SSCResourceItemRegistry.ONYX_GEM, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.RUBY_GEM, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.SAPPHIRE_GEM, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.OPAL_GEM, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TOPAZ_GEM, Models.GENERATED);
+
+
+        // Tools
         itemModelGenerator.register(SSCToolRegistry.COPPER_PICKAXE,"0", Models.HANDHELD);
         itemModelGenerator.register(SSCToolRegistry.COPPER_PICKAXE,"1", Models.HANDHELD);
         itemModelGenerator.register(SSCToolRegistry.COPPER_PICKAXE,"2", Models.HANDHELD);
@@ -38,12 +52,12 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.register(SSCToolRegistry.NETHERITE_GREATSWORD, Models.HANDHELD);
 
         // rings
-        itemModelGenerator.register(SSCJewelryRegistry.ONYX_RING, Models.HANDHELD);
-        itemModelGenerator.register(SSCJewelryRegistry.OPAL_RING, Models.HANDHELD);
-        itemModelGenerator.register(SSCJewelryRegistry.RUBY_RING, Models.HANDHELD);
-        itemModelGenerator.register(SSCJewelryRegistry.SAPPHIRE_RING, Models.HANDHELD);
-        itemModelGenerator.register(SSCJewelryRegistry.TOPAZ_RING, Models.HANDHELD);
-        itemModelGenerator.register(SSCResourceItemRegistry.IRON_RING_ITEM, Models.HANDHELD);
+        itemModelGenerator.register(SSCJewelryRegistry.ONYX_RING, Models.GENERATED);
+        itemModelGenerator.register(SSCJewelryRegistry.OPAL_RING, Models.GENERATED);
+        itemModelGenerator.register(SSCJewelryRegistry.RUBY_RING, Models.GENERATED);
+        itemModelGenerator.register(SSCJewelryRegistry.SAPPHIRE_RING, Models.GENERATED);
+        itemModelGenerator.register(SSCJewelryRegistry.TOPAZ_RING, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.IRON_RING_ITEM, Models.GENERATED);
     }
 
 
