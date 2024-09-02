@@ -29,6 +29,7 @@ public class RuneAttributeTypeLoader implements SimpleSynchronousResourceReloadL
 
     @Override
     public void reload(ResourceManager manager) {
+        ATTRIBUTES.clear();
         Map<Identifier, Resource> resources = manager.findResources("rune_attributes", (path) -> {
             return path.getPath().endsWith(".json");
         });

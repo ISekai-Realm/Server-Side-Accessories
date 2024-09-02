@@ -17,6 +17,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.floatprovider.UniformFloatProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,7 @@ import java.util.List;
 public class ServerSideConstruct implements ModInitializer {
     public static final String MOD_ID = "ss_construct";
     public static final Logger LOGGER = LoggerFactory.getLogger("ServerSideConstruct");
+    private static MinecraftServer SERVER;
     @Override
     public void onInitialize() {
         PolymerResourcePackUtils.addModAssets(MOD_ID);
@@ -49,6 +51,10 @@ public class ServerSideConstruct implements ModInitializer {
         GuiTextures.register();
 
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new RuneAttributeTypeLoader());
+        ServerLifecycleEvents.SERVER_STARTING.register(server -> {
+            SERVER = server;
+        });
+
 
         var test = new RuneAttributes(EntityAttributes.GENERIC_ATTACK_DAMAGE, EntityAttributeModifier.Operation.ADD_VALUE, UniformFloatProvider.create(1.0f, 2.0f), 100,  3);
         var test2 = new RuneAttributes(EntityAttributes.GENERIC_ATTACK_DAMAGE, EntityAttributeModifier.Operation.ADD_VALUE, UniformFloatProvider.create(1.0f, 5.0f), 100, 2);
