@@ -26,10 +26,25 @@ public class SSCItemModelRegistry {
     public static PolymerModelData DIAMOND_SPEAR_MODEL = PolymerResourcePackUtils.requestModel(Items.DIAMOND_SWORD, PathHelper.getItemModelId("diamond_spear"));
     public static PolymerModelData NETHERITE_GREATSWORD_MODEL = PolymerResourcePackUtils.requestModel(Items.NETHERITE_SWORD, PathHelper.getItemModelId("netherite_greatsword"));
 
-    // not implemented
     public static final PolymerModelData IRON_RING_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("iron_ring"));
     public static final PolymerModelData OPAL_RING_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("opal_ring"));
     public static final PolymerModelData RUBY_RING_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("ruby_ring"));
     public static final PolymerModelData SAPPHIRE_RING_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("sapphire_ring"));
     public static final PolymerModelData TOPAZ_RING_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("topaz_ring"));
+
+    public static final PolymerModelData TIER_1_RUBY_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_1_ruby_rune"));
+    public static final PolymerModelData TIER_2_RUBY_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_2_ruby_rune"));
+    public static final PolymerModelData TIER_3_RUBY_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_3_ruby_rune"));
+    public static final PolymerModelData TIER_1_OPAL_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_1_opal_rune"));
+    public static final PolymerModelData TIER_2_OPAL_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_2_opal_rune"));
+    public static final PolymerModelData TIER_3_OPAL_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_3_opal_rune"));
+    public static final PolymerModelData TIER_1_SAPPHIRE_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_1_sapphire_rune"));
+    public static final PolymerModelData TIER_2_SAPPHIRE_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_2_sapphire_rune"));
+    public static final PolymerModelData TIER_3_SAPPHIRE_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_3_sapphire_rune"));
+    public static final PolymerModelData TIER_1_TOPAZ_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_1_topaz_rune"));
+    public static final PolymerModelData TIER_2_TOPAZ_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_2_topaz_rune"));
+    public static final PolymerModelData TIER_3_TOPAZ_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_3_topaz_rune"));
+    public static final PolymerModelData TIER_1_ONYX_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_1_onyx_rune"));
+    public static final PolymerModelData TIER_2_ONYX_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_2_onyx_rune"));
+    public static final PolymerModelData TIER_3_ONYX_RUNE_MODEL = PolymerResourcePackUtils.requestModel(Items.PAPER, PathHelper.getItemModelId("tier_3_onyx_rune"));
 }

@@ -58,6 +58,23 @@ public class ModelProvider extends FabricModelProvider {
         itemModelGenerator.register(SSCJewelryRegistry.SAPPHIRE_RING, Models.GENERATED);
         itemModelGenerator.register(SSCJewelryRegistry.TOPAZ_RING, Models.GENERATED);
         itemModelGenerator.register(SSCResourceItemRegistry.IRON_RING_ITEM, Models.GENERATED);
+
+        // Runes
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_1_RUBY_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_2_RUBY_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_3_RUBY_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_1_OPAL_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_2_OPAL_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_3_OPAL_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_1_SAPPHIRE_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_2_SAPPHIRE_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_3_SAPPHIRE_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_1_TOPAZ_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_2_TOPAZ_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_3_TOPAZ_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_1_ONYX_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_2_ONYX_RUNE, Models.GENERATED);
+        itemModelGenerator.register(SSCResourceItemRegistry.TIER_3_ONYX_RUNE, Models.GENERATED);
     }
 
 

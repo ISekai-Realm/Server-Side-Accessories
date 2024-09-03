@@ -5,7 +5,7 @@ import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import net.biryeongtrain.serversideconstruct.component.JewelryComponent;
-import net.biryeongtrain.serversideconstruct.component.RuneComponent;
+import net.biryeongtrain.serversideconstruct.component.RingComponent;
 import net.biryeongtrain.serversideconstruct.component.RuneType;
 import net.biryeongtrain.serversideconstruct.utils.RandomHelper;
 import net.minecraft.entity.Entity;
@@ -35,12 +35,12 @@ public abstract class Ring extends TrinketItem implements PolymerItem {
         return 20;
     }
 
-    public List<RuneComponent> createRuneSlots() {
+    public List<RingComponent> createRuneSlots() {
         int random = RandomHelper.getRandom(0, MAX_RUNE_SLOTS);
-        List<RuneComponent> runeComponents = new ArrayList<>();
+        List<RingComponent> runeComponents = new ArrayList<>();
         for (int i = 0; i < random; i++) {
             RuneType type = RuneType.roll(this);
-            runeComponents.add(new RuneComponent(type, List.of()));
+            runeComponents.add(new RingComponent(type, List.of()));
         }
         return runeComponents;
     }
@@ -51,8 +51,8 @@ public abstract class Ring extends TrinketItem implements PolymerItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
-        if (!stack.contains(JewelryComponent.RUNE_COMPONENT)) {
-            stack.set(JewelryComponent.RUNE_COMPONENT, this.createRuneSlots());
+        if (!stack.contains(JewelryComponent.RING_ATTRIBUTE_COMPONENT)) {
+            stack.set(JewelryComponent.RING_ATTRIBUTE_COMPONENT, this.createRuneSlots());
         }
     }
 
@@ -71,8 +71,8 @@ public abstract class Ring extends TrinketItem implements PolymerItem {
     @Override
     public void modifyClientTooltip(List<Text> tooltip, ItemStack stack, @Nullable ServerPlayerEntity player) {
         tooltip.add(Text.empty());
-        if (stack.contains(JewelryComponent.RUNE_COMPONENT)) {
-            List<RuneComponent> runeComponents = stack.get(JewelryComponent.RUNE_COMPONENT);
+        if (stack.contains(JewelryComponent.RING_ATTRIBUTE_COMPONENT)) {
+            List<RingComponent> runeComponents = stack.get(JewelryComponent.RING_ATTRIBUTE_COMPONENT);
             runeComponents.forEach(runeComponent -> {
                 var type = runeComponent.type();
                 if (runeComponent.isEmpty()) {
@@ -87,8 +87,8 @@ public abstract class Ring extends TrinketItem implements PolymerItem {
     @Override
     public Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, Identifier slotIdentifier) {
         var modifiers = super.getModifiers(stack, slot, entity, slotIdentifier);
-        if (stack.contains(JewelryComponent.RUNE_COMPONENT)) {
-            List<RuneComponent> runeComponents = stack.get(JewelryComponent.RUNE_COMPONENT);
+        if (stack.contains(JewelryComponent.RING_ATTRIBUTE_COMPONENT)) {
+            List<RingComponent> runeComponents = stack.get(JewelryComponent.RING_ATTRIBUTE_COMPONENT);
             runeComponents.forEach(runeComponent -> {
                 if (!runeComponent.isEmpty()) {
                     runeComponent.collectModifiers(modifiers, "ring");

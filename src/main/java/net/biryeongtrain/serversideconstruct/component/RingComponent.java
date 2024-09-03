@@ -9,11 +9,11 @@ import net.minecraft.registry.entry.RegistryEntry;
 
 import java.util.List;
 
-public record RuneComponent(RuneType type, List<RuneAttributeInstance> components) {
-    public static Codec<RuneComponent> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            RuneType.CODEC.fieldOf("type").forGetter(RuneComponent::type),
-            RuneAttributeInstance.CODEC.listOf().fieldOf("components").forGetter(RuneComponent::components)
-    ).apply(instance, RuneComponent::new));
+public record RingComponent(RuneType type, List<AttributeInstance> components) {
+    public static Codec<RingComponent> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+            RuneType.CODEC.fieldOf("type").forGetter(RingComponent::type),
+            AttributeInstance.CODEC.listOf().fieldOf("components").forGetter(RingComponent::components)
+    ).apply(instance, RingComponent::new));
 
     public Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> collectModifiers(Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> modifiers, String slot) {
         components.forEach(component -> component.createModifier(modifiers, slot + "_rune"));

@@ -17,20 +17,25 @@ public class JewelryComponent {
             .build()
     );
 
-    public static final ComponentType<Integer> DAMAGE_ROLL =  register("jewelry_damage_roll",ComponentType.<Integer>builder()
+    public static final ComponentType<Integer> DAMAGE_ROLL = register("jewelry_damage_roll",ComponentType.<Integer>builder()
             .codec(Codec.INT)
             .packetCodec(PacketCodecs.INTEGER)
             .build()
     );
 
-    public static final ComponentType<Integer> ARMOR_ROLL = register("jewerly_armor_roll", ComponentType.<Integer>builder()
+    public static final ComponentType<Integer> ARMOR_ROLL = register("jewelry_armor_roll", ComponentType.<Integer>builder()
             .codec(Codec.INT)
             .packetCodec(PacketCodecs.INTEGER)
             .build()
     );
 
-    public static final ComponentType<List<RuneComponent>> RUNE_COMPONENT = register("jewelry_rune_component", ComponentType.<List<RuneComponent>>builder()
-            .codec(RuneComponent.CODEC.listOf())
+    public static final ComponentType<List<RingComponent>> RING_ATTRIBUTE_COMPONENT = register("jewelry_rune_component", ComponentType.<List<RingComponent>>builder()
+            .codec(RingComponent.CODEC.listOf())
+            .build()
+    );
+
+    public static final ComponentType<List<AttributeInstance>> RUNE_ATTRIBUTE_COMPONENT = register("rune_attribute_component", ComponentType.<List<AttributeInstance>>builder()
+            .codec(AttributeInstance.CODEC.listOf())
             .build()
     );
 
@@ -39,6 +44,4 @@ public class JewelryComponent {
         PolymerUtils.markAsPolymer(item);
         return item;
     }
-
-
 }

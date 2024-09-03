@@ -10,7 +10,6 @@ public class SSCItemTags {
     public static final TagKey<Item> JEWELRY_ITEMS = TagKey.of(RegistryKeys.ITEM, PathHelper.getModId("jewelry"));
     public static final TagKey<Item> RING_ITEMS = TagKey.of(RegistryKeys.ITEM, PathHelper.getModId("rings"));
     
-    
     public static final TagKey<Item> EXPLORATION_RUNE_FAMILY = TagKey.of(RegistryKeys.ITEM, PathHelper.getModId("exploration_family"));
     public static final TagKey<Item> COMBAT_RUNE_FAMILY = TagKey.of(RegistryKeys.ITEM, PathHelper.getModId("combat_family"));
     public static final TagKey<Item> WATER_EXPLORATION_RUNE_FAMILY = TagKey.of(RegistryKeys.ITEM, PathHelper.getModId("water_exploration_family"));

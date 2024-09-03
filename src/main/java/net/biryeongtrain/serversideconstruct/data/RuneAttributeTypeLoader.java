@@ -1,11 +1,10 @@
 package net.biryeongtrain.serversideconstruct.data;
 
 import com.google.gson.JsonElement;
-import com.google.gson.JsonIOException;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
+import net.biryeongtrain.serversideconstruct.ServerSideConstruct;
 import net.biryeongtrain.serversideconstruct.component.RuneType;
 import net.biryeongtrain.serversideconstruct.item.rune.RuneAttributes;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
@@ -22,6 +21,7 @@ import java.util.Map;
 
 public class RuneAttributeTypeLoader implements SimpleSynchronousResourceReloadListener {
     public static final EnumMap<RuneType, List<RuneAttributes>> ATTRIBUTES = new EnumMap<>(RuneType.class);
+
     @Override
     public Identifier getFabricId() {
         return null;
@@ -30,13 +30,11 @@ public class RuneAttributeTypeLoader implements SimpleSynchronousResourceReloadL
     @Override
     public void reload(ResourceManager manager) {
         ATTRIBUTES.clear();
-        Map<Identifier, Resource> resources = manager.findResources("rune_attributes", (path) -> {
-            return path.getPath().endsWith(".json");
-        });
+        Map<Identifier, Resource> resources = manager.findResources("rune_attributes", (path) -> path.getPath().endsWith(".json"));
 
         for (Map.Entry<Identifier, Resource> identifierResourceEntry : resources.entrySet()) {
-            Identifier id = (Identifier) ((Map.Entry) identifierResourceEntry).getKey();
-            Resource resource = (Resource) ((Map.Entry) identifierResourceEntry).getValue();
+            Identifier id = identifierResourceEntry.getKey();
+            Resource resource = identifierResourceEntry.getValue();
             var typeString = id.getPath()
                     .replace("rune_attributes/", "")
                     .replace(".json", "");
@@ -51,18 +49,24 @@ public class RuneAttributeTypeLoader implements SimpleSynchronousResourceReloadL
                 try {
                     JsonElement json = JsonParser.parseReader(reader);
                     DataResult<List<RuneAttributes>> result = RuneAttributes.CODEC.listOf().parse(JsonOps.INSTANCE, json);
-                    result.result().ifPresent((data) -> {
-                        ATTRIBUTES.put(type, data);
-                    });
-                } catch (JsonIOException e) {
-                    throw new RuntimeException(e);
-                } catch (JsonSyntaxException e) {
-                    throw new RuntimeException(e);
+
+                    result.result().ifPresent((data) -> ATTRIBUTES.put(type, data));
+                    result.error().ifPresent((error) -> ServerSideConstruct.LOGGER.error("Failed to parse rune attribute at {}: {}", id, error));
+
+                    RuneAttributeManager.reCalculate(ATTRIBUTES);
+                } catch (Throwable ex) {
+                    try {
+                        reader.close();
+                    } catch (Throwable ex2) {
+                        ex2.addSuppressed(ex);
+                    }
+
+                    throw ex;
                 }
-                // Do something with the resource
+
                 reader.close();
             } catch (Exception e) {
-                // Handle the exception
+                ServerSideConstruct.LOGGER.error("Failed to read page at {}", id, e);
             }
         }
     }

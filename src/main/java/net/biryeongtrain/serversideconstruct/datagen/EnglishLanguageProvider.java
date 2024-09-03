@@ -29,6 +29,23 @@ public class EnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(SSCBlockRegistry.RUBY_ORE, "Ruby Ore");
         translationBuilder.add(SSCBlockRegistry.SAPPHIRE_ORE, "Sapphire Ore");
         translationBuilder.add(SSCBlockRegistry.TOPAZ_ORE, "Topaz Ore");
+
+        translationBuilder.add(SSCResourceItemRegistry.TIER_1_RUBY_RUNE, "Cracked Ruby Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_2_RUBY_RUNE, "Flawed Ruby Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_3_RUBY_RUNE, "Perfect Ruby Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_1_OPAL_RUNE, "Cracked Opal Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_2_OPAL_RUNE, "Flawed Opal Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_3_OPAL_RUNE, "Perfect Opal Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_1_SAPPHIRE_RUNE, "Cracked Sapphire Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_2_SAPPHIRE_RUNE, "Flawed Sapphire Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_3_SAPPHIRE_RUNE, "Perfect Sapphire Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_1_TOPAZ_RUNE, "Cracked Topaz Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_2_TOPAZ_RUNE, "Flawed Topaz Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_3_TOPAZ_RUNE, "Perfect Topaz Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_1_ONYX_RUNE, "Cracked Onyx Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_2_ONYX_RUNE, "Flawed Onyx Rune");
+        translationBuilder.add(SSCResourceItemRegistry.TIER_3_ONYX_RUNE, "Perfect Onyx Rune");
+        translationBuilder.add("item.ss_construct.rune.unidentified.lore", "Use %d to identify rune");
         try {
             Path existingFilePath = dataOutput.getModContainer().findPath("assets/ss_construct/lang/en_us.existing.json").get();
             translationBuilder.add(existingFilePath);

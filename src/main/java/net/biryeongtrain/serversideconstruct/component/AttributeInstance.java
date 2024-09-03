@@ -10,12 +10,12 @@ import net.minecraft.registry.entry.RegistryEntry;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-public record RuneAttributeInstance(RegistryEntry<EntityAttribute> attribute, double value, EntityAttributeModifier.Operation operation) {
-    public static Codec<RuneAttributeInstance> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            EntityAttribute.CODEC.fieldOf("attribute").forGetter(RuneAttributeInstance::attribute),
-            Codec.DOUBLE.fieldOf("value").forGetter(RuneAttributeInstance::value),
-            EntityAttributeModifier.Operation.CODEC.fieldOf("operation").forGetter(RuneAttributeInstance::operation)
-    ).apply(instance, RuneAttributeInstance::new));
+public record AttributeInstance(RegistryEntry<EntityAttribute> attribute, double value, EntityAttributeModifier.Operation operation) {
+    public static Codec<AttributeInstance> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+            EntityAttribute.CODEC.fieldOf("attribute").forGetter(AttributeInstance::attribute),
+            Codec.DOUBLE.fieldOf("value").forGetter(AttributeInstance::value),
+            EntityAttributeModifier.Operation.CODEC.fieldOf("operation").forGetter(AttributeInstance::operation)
+    ).apply(instance, AttributeInstance::new));
 
     @Contract("_, _ -> param1")
     public Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> createModifier(@NotNull Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> modifiers, @NotNull String id) {
