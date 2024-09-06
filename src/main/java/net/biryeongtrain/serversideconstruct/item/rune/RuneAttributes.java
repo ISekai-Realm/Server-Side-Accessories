@@ -25,4 +25,51 @@ public record RuneAttributes(RegistryEntry<EntityAttribute> attribute, EntityAtt
     public AttributeInstance getAttributeInstance(World world) {
         return new AttributeInstance(attribute, range.get(world.getRandom()), operation);
     }
+    
+    public static class Builder {
+        private RegistryEntry<EntityAttribute> attribute;
+        private EntityAttributeModifier.Operation operation;
+        private UniformFloatProvider range;
+        private int weight;
+        private int genTier = -1;
+        
+        private Builder() {
+        }
+        
+        public static Builder create() {
+            return new Builder();
+        }
+        
+        public Builder attribute(RegistryEntry<EntityAttribute> attribute) {
+            this.attribute = attribute;
+            return this;
+        }
+        
+        public Builder operation(EntityAttributeModifier.Operation operation) {
+            this.operation = operation;
+            return this;
+        }
+        
+        public Builder range(float min, float max) {
+            this.range = UniformFloatProvider.create(min, max);
+            return this;
+        }
+        
+        public Builder weight(int weight) {
+            this.weight = weight;
+            return this;
+        }
+        
+        public Builder genTier(int genTier) {
+            this.genTier = genTier;
+            return this;
+        }
+        
+        public RuneAttributes build() {
+            if (attribute == null || operation == null || range == null || genTier <= 0) {
+                throw new IllegalStateException("Attribute, operation, and range must be set");
+            }
+            return new RuneAttributes(attribute, operation, range, weight, genTier);
+        }
+    }
 }

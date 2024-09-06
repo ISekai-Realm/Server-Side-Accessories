@@ -2,6 +2,7 @@ package net.biryeongtrain.serversideconstruct.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
 
 import static net.biryeongtrain.serversideconstruct.ServerSideConstruct.LOGGER;
 
@@ -18,5 +19,11 @@ public class DataGenInit implements DataGeneratorEntrypoint {
         pack.addProvider(LootTableProvider::new);
         pack.addProvider((a, b) -> new AssetProvider(a));
         pack.addProvider(EnglishLanguageProvider::new);
+        pack.addProvider(RuneAttributeProvider::new);
+    }
+
+    @Override
+    public void buildRegistry(RegistryBuilder registryBuilder) {
+        DataGeneratorEntrypoint.super.buildRegistry(registryBuilder);
     }
 }

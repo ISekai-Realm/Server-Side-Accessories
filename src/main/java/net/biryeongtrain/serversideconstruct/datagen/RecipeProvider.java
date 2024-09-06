@@ -1,6 +1,7 @@
 package net.biryeongtrain.serversideconstruct.datagen;
 
 import net.biryeongtrain.serversideconstruct.recipe.GemInsertRecipe;
+import net.biryeongtrain.serversideconstruct.recipe.RuneInfuseRecipe;
 import net.biryeongtrain.serversideconstruct.registry.item.SSCItemTags;
 import net.biryeongtrain.serversideconstruct.registry.item.SSCResourceItemRegistry;
 import net.biryeongtrain.serversideconstruct.utils.PathHelper;
@@ -29,6 +30,7 @@ public class RecipeProvider extends FabricRecipeProvider {
             String path = item.getRegistryEntry().getKey().get().getValue().getPath();
             var result = Registries.ITEM.get(PathHelper.getModId(path.replace("gem", "ring")));
             of(exporter, new RecipeEntry<>(PathHelper.getModId("jeweler/insert_" + path), new GemInsertRecipe(Ingredient.ofItems(SSCResourceItemRegistry.IRON_RING_ITEM), Ingredient.ofItems(item), result.getDefaultStack())));
+            of(exporter, new RecipeEntry<>(PathHelper.getModId("jeweler/infuse_" + path), new RuneInfuseRecipe(Ingredient.fromTag(SSCItemTags.JEWELRY_ITEMS), Ingredient.fromTag(SSCItemTags.RUNE_ITEMS))));
         }
     }
 

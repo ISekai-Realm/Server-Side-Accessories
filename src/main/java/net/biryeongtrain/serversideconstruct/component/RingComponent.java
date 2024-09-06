@@ -22,6 +22,6 @@ public record RingComponent(RuneType type, List<AttributeInstance> components) {
     }
 
     public boolean isEmpty() {
-        return components.isEmpty();
+        return components == null || components.isEmpty();
     }
 }

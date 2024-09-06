@@ -58,5 +58,23 @@ public class ItemTagsProvider extends FabricTagProvider.ItemTagProvider {
         this.getOrCreateTagBuilder(SSCItemTags.JEWELRY_ITEMS)
                 .addOptionalTag(SSCItemTags.RING_ITEMS)
         ;
+        
+        this.getOrCreateTagBuilder(SSCItemTags.RUNE_ITEMS)
+                .add(SSCResourceItemRegistry.TIER_1_ONYX_RUNE)
+                .add(SSCResourceItemRegistry.TIER_1_OPAL_RUNE)
+                .add(SSCResourceItemRegistry.TIER_1_RUBY_RUNE)
+                .add(SSCResourceItemRegistry.TIER_1_SAPPHIRE_RUNE)
+                .add(SSCResourceItemRegistry.TIER_1_TOPAZ_RUNE)
+                .add(SSCResourceItemRegistry.TIER_2_ONYX_RUNE)
+                .add(SSCResourceItemRegistry.TIER_2_OPAL_RUNE)
+                .add(SSCResourceItemRegistry.TIER_2_RUBY_RUNE)
+                .add(SSCResourceItemRegistry.TIER_2_SAPPHIRE_RUNE)
+                .add(SSCResourceItemRegistry.TIER_2_TOPAZ_RUNE)
+                .add(SSCResourceItemRegistry.TIER_3_ONYX_RUNE)
+                .add(SSCResourceItemRegistry.TIER_3_OPAL_RUNE)
+                .add(SSCResourceItemRegistry.TIER_3_RUBY_RUNE)
+                .add(SSCResourceItemRegistry.TIER_3_SAPPHIRE_RUNE)
+                .add(SSCResourceItemRegistry.TIER_3_TOPAZ_RUNE)
+                ;
     }
 }

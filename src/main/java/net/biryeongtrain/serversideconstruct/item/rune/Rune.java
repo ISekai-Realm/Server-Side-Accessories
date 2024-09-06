@@ -75,7 +75,7 @@ public class Rune extends Item implements PolymerItem {
         }
         var originalStack = user.getStackInHand(hand);
 
-        if (!originalStack.contains(JewelryComponent.RING_ATTRIBUTE_COMPONENT)) {
+        if (!originalStack.contains(JewelryComponent.RUNE_ATTRIBUTE_COMPONENT)) {
             var stack = new ItemStack(this);
             var attempt = RandomHelper.getRandom(getTier().minAttributes, getTier().maxAttributes);
             var list = generateType(attempt,getTier().tier,  currentTierOnly(), canAttributeDuplicated(), world);

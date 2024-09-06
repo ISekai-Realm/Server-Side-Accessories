@@ -2,11 +2,13 @@ package net.biryeongtrain.serversideconstruct.component;
 
 import com.mojang.serialization.Codec;
 import net.biryeongtrain.serversideconstruct.registry.item.SSCItemTags;
+import net.biryeongtrain.serversideconstruct.utils.PathHelper;
 import net.biryeongtrain.serversideconstruct.utils.RandomHelper;
 import net.minecraft.item.Item;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.TextColor;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.StringIdentifiable;
 
 import java.util.List;
@@ -54,6 +56,11 @@ public enum RuneType implements StringIdentifiable {
     public static final int DOUBLE_ON_COLOR_ADD_WEIGHT = 3;
     private static final List<RuneType> VALIDATE_TYPE = List.of(EXPLORE, MINING, COMBAT, WATER_EXPLORE, EXPERIENCE, EVERYTHING);
     private static final int TOTAL_WEIGHT = VALIDATE_TYPE.stream().mapToInt(value -> value.defaultWeight).sum();
+    
+    public Identifier getId() {
+        return PathHelper.getModId(this.name);
+    }
+ 
     static {
         CODEC = StringIdentifiable.createCodec(RuneType::values);
     }

@@ -81,6 +81,7 @@ public abstract class Ring extends TrinketItem implements PolymerItem {
                     tooltip.add(Text.translatable("item.ring.rune.tooltip.filled", "\uD83D\uDC8E", Text.translatable(type.getTranslatableKey())).withColor(type.rgbColor.getRgb()));
                 }
             });
+            tooltip.add(Text.empty());
         }
     }
 
@@ -88,7 +89,7 @@ public abstract class Ring extends TrinketItem implements PolymerItem {
     public Multimap<RegistryEntry<EntityAttribute>, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, Identifier slotIdentifier) {
         var modifiers = super.getModifiers(stack, slot, entity, slotIdentifier);
         if (stack.contains(JewelryComponent.RING_ATTRIBUTE_COMPONENT)) {
-            List<RingComponent> runeComponents = stack.get(JewelryComponent.RING_ATTRIBUTE_COMPONENT);
+            List<RingComponent> runeComponents = stack.getOrDefault(JewelryComponent.RING_ATTRIBUTE_COMPONENT, List.of());
             runeComponents.forEach(runeComponent -> {
                 if (!runeComponent.isEmpty()) {
                     runeComponent.collectModifiers(modifiers, "ring");
