@@ -1,6 +1,5 @@
 package net.biryeongtrain.serversideconstruct.recipe;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.biryeongtrain.serversideconstruct.component.JewelryComponent;
@@ -15,7 +14,6 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.World;
-import org.w3c.dom.Attr;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +55,7 @@ public record RuneInfuseRecipe(Ingredient base, Ingredient rune) implements Jewe
         if (attribute == null) {
             attribute = list.stream().filter((attr) -> attr.type() == RuneType.EVERYTHING).findFirst().orElse(null);
         }
-        
+
         if (attribute == null) {
             return ItemStack.EMPTY;
         }

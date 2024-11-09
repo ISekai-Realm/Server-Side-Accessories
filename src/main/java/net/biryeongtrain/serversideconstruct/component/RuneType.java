@@ -18,7 +18,7 @@ import static net.biryeongtrain.serversideconstruct.ServerSideConstruct.LOGGER;
 public enum RuneType implements StringIdentifiable {
     EXPLORE("explore", SSCItemTags.EXPLORATION_RUNE_FAMILY, "#757575"),
     MINING("mining", SSCItemTags.MINING_RUNE_FAMILY, "#91dded"),
-    COMBAT("combat", SSCItemTags.COMBAT_RUNE_FAMILY, "#d80606 "),
+    COMBAT("combat", SSCItemTags.COMBAT_RUNE_FAMILY, "#d80606"),
     WATER_EXPLORE("water_explore", SSCItemTags.WATER_EXPLORATION_RUNE_FAMILY, "#1298ff"),
     EXPERIENCE("experience", SSCItemTags.EXPERIENCE_RUNE_FAMILY, "#edbd39"),
     EVERYTHING("everything", SSCItemTags.EVERYTHING_RUNE_FAMILY, 10, "#ffffff"),

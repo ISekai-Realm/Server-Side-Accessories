@@ -31,7 +31,7 @@ public class RuneAttributeTypeLoader implements SimpleSynchronousResourceReloadL
     public void reload(ResourceManager manager) {
         ATTRIBUTES.clear();
         Map<Identifier, Resource> resources = manager.findResources("rune_attributes", (path) -> path.getPath().endsWith(".json"));
-
+        var test2 = manager.findResources("ss_construct", (path) -> path.getPath().endsWith(".json"));
         for (Map.Entry<Identifier, Resource> identifierResourceEntry : resources.entrySet()) {
             Identifier id = identifierResourceEntry.getKey();
             Resource resource = identifierResourceEntry.getValue();
@@ -65,6 +65,7 @@ public class RuneAttributeTypeLoader implements SimpleSynchronousResourceReloadL
                 }
 
                 reader.close();
+
             } catch (Exception e) {
                 ServerSideConstruct.LOGGER.error("Failed to read page at {}", id, e);
             }

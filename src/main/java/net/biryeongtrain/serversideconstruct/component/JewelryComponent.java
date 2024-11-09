@@ -39,9 +39,9 @@ public class JewelryComponent {
             .build()
     );
 
-    public static <T> ComponentType<T> register(String path, ComponentType<T> item) {
-        Registry.register(Registries.DATA_COMPONENT_TYPE, PathHelper.getModId(path), item);
-        PolymerUtils.markAsPolymer(item);
-        return item;
+    public static <T> ComponentType<T> register(String path, ComponentType<T> component) {
+        Registry.register(Registries.DATA_COMPONENT_TYPE, PathHelper.getModId(path), component);
+        PolymerUtils.markAsPolymer(component);
+        return component;
     }
 }
